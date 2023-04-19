@@ -17,3 +17,4 @@ function close_window() { // 함수 정의
 }
 
 window.onload=showWindow;
+
