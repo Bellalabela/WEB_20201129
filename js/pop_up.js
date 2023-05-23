@@ -60,3 +60,4 @@ function closePopup() {
             self.close();
         }
     }
+
