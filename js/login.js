@@ -1,4 +1,18 @@
-	function login(){ // 로그인
+	function addJavascript(jsname) { // 자바스크립트 외부 연동
+	var th = document.getElementsByTagName('head')[0];
+	var s = document.createElement('script');
+	s.setAttribute('type','text/javascript');
+	s.setAttribute('src',jsname);
+	th.appendChild(s);
+}
+
+addJavascript('/js/security.js'); // 암복호화 함수
+addJavascript('/js/session.js'); // 세션 함수
+addJavascript('/js/cookie.js'); // 쿠키 함수
+
+/*
+
+function login(){ // 로그인
     let form = document.querySelector("#form_main");
     let id = document.querySelector("#floatingInput");
     let password = document.querySelector("#floatingPassword");
@@ -6,7 +20,7 @@
     
     form.action = "../index_login.html";
     form.method = "get";
-    
+	
     if(id.value.length === 0 || password.value.length === 0){
         alert("아이디와 비밀번호를 모두 입력해주세요.");
 	}else{
@@ -20,8 +34,10 @@ function logout(){
     location.href='../index.html';
 }
 
+*/
 
-	function getCookie(name) {
+/*
+	 function getCookie(name) {
         var cookie = document.cookie;
         console.log("쿠키를 요청합니다.");
         if (cookie != "") {
@@ -37,6 +53,8 @@ function logout(){
         return;
 }
 
+
+
 function get_id(){
     if(true){
         decrypt_text();
@@ -50,10 +68,12 @@ function get_id(){
  
 
 	
-function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
+ function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
     let id = document.querySelector("#floatingInput");
     let check = document.querySelector("#idSaveCheck");
     let get_id = getCookie("id");
+
+	
 		
 		if(get_id) { 
     id.value = get_id; 
@@ -151,6 +171,4 @@ function decrypt_text(){
     const b = this.decodeByAES256(rk, eb);
     console.log(b); 
 }
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script> 
+*/
