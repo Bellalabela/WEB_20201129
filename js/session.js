@@ -10,14 +10,14 @@ function login(){ // 로그인
     if(id.value.length === 0 || password.value.length === 0){
         alert("아이디와 비밀번호를 모두 입력해주세요.");
 	}else{
-		sessionStorage.session_set(); // 세션 생성
+		setItem.session_set(); // 세션 생성
         form.submit();
     }
 }
     
 
 function logout(){
-	    sessionStorage.session_del(); // 세션 삭제
+	    removeItem.session_del(); // 세션 삭제
     location.href='../index.html';
 }
 
@@ -40,7 +40,7 @@ function get_id(){
  function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
     let id = document.querySelector("#floatingInput");
     let check = document.querySelector("#idSaveCheck");
-    let get_id = getsession.get_id("id");
+    let get_id = sessionStorage.get_id("id");
 
 	
 		
