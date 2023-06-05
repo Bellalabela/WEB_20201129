@@ -33,27 +33,3 @@ function decrypt_text(){
     console.log(b); 
 }
 
-function session_set() { //세션 저장
-    let id = document.querySelector("#floatingInput");
-    let password = document.querySelector("#floatingPassword");
-    if (sessionStorage) {
-        let en_text = encrypt_text(password.value);
-        sessionStorage.setItem("Session_Storage_test", en_text);
-
-    } else {
-        alert("로컬 스토리지 지원 x");
-    }
-}
-
-function get_id(){
-    if(true){
-        decrypt_text();
-    }
-    else{
-        var getParameters = function(paramName){ // 변수 = 함수(이름)
-        //생략…. 
-        alert(getParameters('id') + '님 방갑습니다!'); // 메시지 창 출력
-    }
-}
-
-}
