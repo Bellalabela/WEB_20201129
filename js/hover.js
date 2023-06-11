@@ -1,6 +1,6 @@
-function over(obi){
-	obi.src="img/Google_Logo_1998.png";
+function over(obj){
+	obj.src="img/Google_Logo_1998.png";
 }
-function over(obi){
-	obi.src="img/custom_googleLogo.png";
+function out(obj){
+	obj.src="img/custom_googleLogo.png";
 }

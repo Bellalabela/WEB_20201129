@@ -11,7 +11,7 @@ class SignUp {
   }
 
   get fullName() {
-    return `${this.firstName} ${this.lastName}`;
+    return '${this.firstName} ${this.lastName}';
   }
 
   set fullName(fullName) {
@@ -21,7 +21,7 @@ class SignUp {
   }
 
   get contactInfo() {
-    return `${this.emailAddress} ${this.phoneNumber} ${this.random}`;
+    return '${this.emailAddress} ${this.phoneNumber} ${this.random}';
   }
 
   set contactInfo(contactInfo) {
@@ -32,7 +32,6 @@ class SignUp {
       
   }
 }
-
 function addJavascript(jsname) { // 자바스크립트 외부 연동
 	var th = document.getElementsByTagName('head')[0];
 	var s = document.createElement('script');
@@ -40,7 +39,6 @@ function addJavascript(jsname) { // 자바스크립트 외부 연동
 	s.setAttribute('src',jsname);
 	th.appendChild(s);
 }
-
 addJavascript('/js/security.js'); // 암복호화 함수
 addJavascript('/js/session.js'); // 세션 함수
 
@@ -60,7 +58,8 @@ function join(){ // 회원가입
     if(f_name.value.length === 0 || l_name.value.length === 0 || b_day.value.length === 0 || email.value.length === 0 || p_number.value.length === 0){
         alert("회원가입 폼에 모든 정보를 입력해주세요.(성별, 분반 제외)");
     }else{
-		session_join_set(); // 회원가입 용 세션 생성
+        session_join_set();
         form.submit();
     }
 }
+
