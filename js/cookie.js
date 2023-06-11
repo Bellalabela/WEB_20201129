@@ -1,17 +1,14 @@
-function closePopup() {
-        if (document.getElementById('check_popup').value) {
-            setCookie("id", "N", 1);
-            console.log("쿠키를 설정합니다.");
-            self.close();
-        }
-    }
-
-	
 function setCookie(name, value, expiredays) {
-        var date = new Date();
-        date.setDate(date.getDate() + expiredays);
-        document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString() + "SameSite=None; Secure";
-    }
+  var date = new Date();
+  date.setDate(date.getDate() + expiredays);
+  
+  var fiveMinutesInMilliseconds = 3 * 60 * 1000;
+ 
+  date.setTime(date.getTime() + fiveMinutesInMilliseconds);
+
+  document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString() + "SameSite=None; Secure";
+}
+
 
 function getCookie(name) {
         var cookie = document.cookie;
@@ -30,7 +27,14 @@ function getCookie(name) {
 }
 
 
+function deleteCookie(cookieName){
+  var expireDate = new Date();
+  expireDate.setDate(expireDate.getDate() - 1);
+  document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+}
 
+
+setCookie("login", "yes", 1);
 
 
 
