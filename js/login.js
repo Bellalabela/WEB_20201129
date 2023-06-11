@@ -48,9 +48,6 @@ function login(){ // 로그인
 }
 
 
-function login_check(){
-    
-}
 function logout(){
     session_del(); // 세션 삭제
     location.href='../index.html';
